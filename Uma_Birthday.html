@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Uma 🎂</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  display:flex; justify-content:center; align-items:center;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ffd6e7,#d9d5ff,#c9f7ff);
+  color:#4a3155;
+}
+.card{
+  width:min(90%,430px); padding:34px 24px; text-align:center;
+  background:rgba(255,255,255,.78); backdrop-filter:blur(10px);
+  border-radius:28px; box-shadow:0 15px 45px rgba(70,40,90,.18);
+  position:relative; z-index:2;
+}
+h1{font-size:2.2rem;margin:8px 0;color:#d34d87}
+h2{font-size:1.5rem;margin:6px 0 18px}
+p{font-size:1.05rem;line-height:1.65}
+.cake{font-size:4.5rem;animation:bounce 1.8s infinite}
+button{
+  border:0;border-radius:999px;padding:13px 24px;margin-top:12px;
+  font-size:1rem;font-weight:bold;color:white;background:#d34d87;
+  box-shadow:0 7px 18px rgba(211,77,135,.3);
+}
+#surprise{display:none;margin-top:20px;font-size:1.05rem}
+.heart{position:absolute;bottom:-30px;font-size:22px;animation:float 7s linear infinite;opacity:.8}
+@keyframes bounce{50%{transform:translateY(-10px)}}
+@keyframes float{
+  from{transform:translateY(0) rotate(0deg);opacity:0}
+  15%{opacity:.8} to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="cake">🎂</div>
+  <h1>Happy Birthday!</h1>
+  <h2>Dear Uma 🌸</h2>
+  <p>
+    It’s been a while since we talked, but I didn’t want to miss
+    wishing you on your special day.
+  </p>
+  <p>
+    May your day be filled with happiness, smiles and beautiful moments.
+    Wishing you lots of success and a wonderful year ahead! ✨
+  </p>
+  <button onclick="showSurprise()">Tap for a little surprise 🎁</button>
+  <div id="surprise">
+    <strong>Once again, Happy Birthday, Uma! 🎉❤️</strong><br>
+    Keep smiling and have an amazing day! 😊
+  </div>
+</div>
+
+<script>
+function showSurprise(){
+  document.getElementById("surprise").style.display="block";
+  for(let i=0;i<35;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.textContent=["❤️","💖","💕","✨","🌸"][Math.floor(Math.random()*5)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDelay=Math.random()*2+"s";
+    h.style.animationDuration=(5+Math.random()*4)+"s";
+    document.body.appendChild(h);
+  }
+}
+</script>
+</body>
+</html>
